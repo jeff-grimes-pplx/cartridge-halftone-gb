@@ -1,0 +1,199 @@
+{
+  "project": "Cartridge \u2014 Halftone 64 KiB Game Boy ROM & Photoreal 3D DMG-01 Hardware Studio",
+  "verified_at_utc": "2026-11-05T23:34:52Z",
+  "rom_header": {
+    "file": "HALFTONE.gb",
+    "size_bytes": 65536,
+    "sha256": "45748f2c4249d8a78b15c372d873d03c7c7e2f200825fdcbc504a39944e178b9",
+    "nintendo_logo_valid": true,
+    "title": "HALFTONE",
+    "game_code": "\u0000\u0000\u0000\u0000",
+    "new_licensee": "00",
+    "cartridge_type_hex": "0x1B",
+    "cartridge_type_desc": "MBC5 + RAM + BATTERY",
+    "rom_size_code": 1,
+    "rom_size_kib": 64,
+    "ram_size_code": 2,
+    "ram_size_kib": 8,
+    "header_checksum_stored": "0xE4",
+    "header_checksum_computed": "0xE4",
+    "header_checksum_valid": true,
+    "global_checksum_stored": "0x9062",
+    "global_checksum_computed": "0x9062",
+    "global_checksum_valid": true,
+    "banks": [
+      {
+        "bank": 0,
+        "size_bytes": 16384,
+        "used_bytes": 9995,
+        "free_bytes": 6389,
+        "utilization_pct": 61.0
+      },
+      {
+        "bank": 1,
+        "size_bytes": 16384,
+        "used_bytes": 11352,
+        "free_bytes": 5032,
+        "utilization_pct": 69.29
+      },
+      {
+        "bank": 2,
+        "size_bytes": 16384,
+        "used_bytes": 10682,
+        "free_bytes": 5702,
+        "utilization_pct": 65.2
+      },
+      {
+        "bank": 3,
+        "size_bytes": 16384,
+        "used_bytes": 11449,
+        "free_bytes": 4935,
+        "utilization_pct": 69.88
+      }
+    ]
+  },
+  "pyboy_verification": {
+    "emulator": "PyBoy v2.7.1 (Python SM83 / PPU / MBC5 Verifier)",
+    "elapsed_sec": 0.078,
+    "title_boot_verified": true,
+    "title_state": 1,
+    "title_gframe": 36,
+    "plate1_entry_state": 3,
+    "plate1_level": 8,
+    "player_pos_start": [
+      64,
+      96
+    ],
+    "player_pos_after_run_jump": [
+      129,
+      88
+    ],
+    "ink_flip_phase_after_b": "CHALK (1)",
+    "hearts": 3,
+    "ly_end_scanline": 61,
+    "gameplay_lag_frames": 0,
+    "status": "PASS"
+  },
+  "binjgb_verification": {
+    "emulator": "binjgb WASM (Cycle-Accurate SM83 / PPU / 4-Ch APU Core)",
+    "elapsed_sec": 5.888,
+    "plates_verified": [
+      {
+        "plate": 1,
+        "name": "MARGINS",
+        "cleared": true,
+        "cleared_at_g_frame": 824,
+        "final_g_frame": 1065,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 93,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 2,
+        "name": "GALLEY",
+        "cleared": true,
+        "cleared_at_g_frame": 794,
+        "final_g_frame": 1035,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 94,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 3,
+        "name": "INK WORKS",
+        "cleared": true,
+        "cleared_at_g_frame": 783,
+        "final_g_frame": 1024,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 120,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 4,
+        "name": "BINDERY",
+        "cleared": true,
+        "cleared_at_g_frame": 865,
+        "final_g_frame": 1106,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 120,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 5,
+        "name": "PULSE",
+        "cleared": true,
+        "cleared_at_g_frame": 784,
+        "final_g_frame": 1025,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 114,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 6,
+        "name": "ROTARY",
+        "cleared": true,
+        "cleared_at_g_frame": 885,
+        "final_g_frame": 1126,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 115,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 7,
+        "name": "NEGATIVE",
+        "cleared": true,
+        "cleared_at_g_frame": 811,
+        "final_g_frame": 1052,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 4,
+        "max_ly_end": 118,
+        "boss_hp_final": null
+      },
+      {
+        "plate": 8,
+        "name": "THE SMUDGE (BOSS)",
+        "cleared": true,
+        "cleared_at_g_frame": 1352,
+        "final_g_frame": 1500,
+        "hearts_remaining": 3,
+        "deaths": 0,
+        "lag_frames": 3,
+        "max_ly_end": 105,
+        "boss_hp_final": 0
+      }
+    ],
+    "full_campaign": {
+      "g_frame": 8160,
+      "g_state": 6,
+      "g_level": 7,
+      "g_hearts": 3,
+      "g_sorts_mask": 0,
+      "g_boss_hp": 0,
+      "g_ending_reached": 1,
+      "g_deaths": 0,
+      "g_lag": 17,
+      "max_ly_end": 120,
+      "cleared_at_frame": 824,
+      "sram_magic": "HFT1",
+      "sram_next_plate": 7,
+      "sram_complete": 1,
+      "sram_checksum_hex": "0xE3"
+    },
+    "status": "PASS"
+  },
+  "reference_emulator_agreement": null,
+  "overall_status": "PASS"
+}

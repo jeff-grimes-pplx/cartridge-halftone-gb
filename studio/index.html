@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CARTRIDGE — Halftone 64 KiB Game Boy ROM &amp; 1989 DMG-01 Hardware Studio</title>
+  <link rel="icon" href="data:," />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three/three.module.js",
+      "three/addons/": "./vendor/three/jsm/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app-shell">
+    <!-- LEFT / CENTER: PHOTOREALISTIC 3D DMG-01 WORKBENCH STAGE -->
+    <main id="stage-panel">
+      <div id="stage-3d" aria-label="Interactive 3D 1989 DMG-01 Game Boy Handheld and Cartridge"></div>
+
+      <!-- Top Floating Studio Bar -->
+      <header id="top-hud">
+        <div class="brand-cluster">
+          <div class="brand-pill">
+            <span class="led-dot"></span>
+            <span class="brand-name">CARTRIDGE</span>
+            <span class="brand-sep">·</span>
+            <span class="brand-sub">HALFTONE 64 KiB ROM</span>
+          </div>
+          <div class="hash-pill" title="Verified Nintendo Header Checksum 0xE4 &amp; Global Checksum 0x9062">
+            <span>DMG-HT-USA</span>
+            <span class="sep">|</span>
+            <span>MBC5+RAM+BAT</span>
+            <span class="sep">|</span>
+            <span>CHK 0xE4 OK</span>
+          </div>
+        </div>
+
+        <div class="camera-cluster" role="group" aria-label="3D Camera View Presets">
+          <button class="hud-btn active" data-cam-preset="desk_hero">1 · Desk Hero</button>
+          <button class="hud-btn" data-cam-preset="uncropped_lcd">2 · Uncropped LCD</button>
+          <button class="hud-btn" data-cam-preset="insert_cart">3 · Insert Cart</button>
+          <button class="hud-btn" data-cam-preset="exploded_pcb">4 · Exploded PCB X-Ray</button>
+        </div>
+
+        <div class="palette-cluster" role="group" aria-label="LCD Palette">
+          <button class="hud-btn sm active" data-palette="dmg">DMG Olive</button>
+          <button class="hud-btn sm" data-palette="paper">Paper Ink</button>
+          <button class="hud-btn sm" data-palette="pocket">Pocket B&amp;W</button>
+        </div>
+      </header>
+
+      <!-- Interactive 3D Hardware Callout Overlay (Visible in Exploded PCB X-Ray View) -->
+      <div id="xray-callouts" aria-hidden="true">
+        <div id="callout-sm83" class="xray-callout">
+          <div class="callout-title">U1 · SHARP LR35902 (SM83 CPU)</div>
+          <div class="callout-spec">4.194304 MHz · 8-bit Core · 0 Lag Frames</div>
+          <div class="callout-live">PC 0x0100 · SP 0xFFFE</div>
+        </div>
+        <div id="callout-vram" class="xray-callout">
+          <div class="callout-title">U2 · 8 KiB VIDEO RAM (0x8000)</div>
+          <div class="callout-spec">384 Tile Slots · 8×16 OAM DMA</div>
+          <div class="callout-live">190/256 BG · 136/256 OBJ</div>
+        </div>
+        <div id="callout-rom" class="xray-callout">
+          <div class="callout-title">GAME PAK · 64 KiB ROM + MBC5</div>
+          <div class="callout-spec">4 × 16 KiB Banks · 43,137 B Used</div>
+          <div class="callout-live">HDR 0xE4 · GLB 0x9062</div>
+        </div>
+        <div id="callout-sram" class="xray-callout">
+          <div class="callout-title">8 KiB SRAM + CR2025 BATTERY</div>
+          <div class="callout-spec">21-Byte HFT1 Record @ 0xA000</div>
+          <div class="callout-live">Checksum 0x7F+Σ Verified</div>
+        </div>
+      </div>
+
+      <!-- Bottom Floating Plate Warp & Transport Bar -->
+      <footer id="bottom-hud">
+        <div class="warp-row">
+          <span class="row-label">INSTANT WARP</span>
+          <div class="plate-pills" role="group" aria-label="Instant Plate Warp">
+            <button class="plate-pill active" data-warp-plate="0">Title</button>
+            <button class="plate-pill" data-warp-plate="1">P1 Margins</button>
+            <button class="plate-pill" data-warp-plate="2">P2 Galley</button>
+            <button class="plate-pill" data-warp-plate="3">P3 Ink Works</button>
+            <button class="plate-pill" data-warp-plate="4">P4 Bindery</button>
+            <button class="plate-pill" data-warp-plate="5">P5 Pulse</button>
+            <button class="plate-pill" data-warp-plate="6">P6 Rotary</button>
+            <button class="plate-pill" data-warp-plate="7">P7 Negative</button>
+            <button class="plate-pill boss" data-warp-plate="8">P8 The Smudge (Boss)</button>
+            <button class="plate-pill ending" data-warp-plate="9">Final Page</button>
+          </div>
+        </div>
+
+        <div class="transport-row">
+          <div class="left-controls">
+            <button id="btn-ai-toggle" class="action-btn active">⚡ AI Speedrunner: ON</button>
+            <button id="btn-audio-toggle" class="action-btn">🔇 4-Ch APU: MUTE</button>
+            <button id="btn-cart-eject" class="action-btn">⏏ Eject Pak</button>
+          </div>
+          <div class="control-hint">
+            <span><strong>Manual Keys:</strong> Arrows/WASD Move · <kbd>X</kbd>/<kbd>Space</kbd> Jump (A) · <kbd>Z</kbd> Flip Ink (B) · <kbd>Enter</kbd> Start · Drag 3D to Orbit</span>
+          </div>
+          <div class="right-controls">
+            <button id="btn-download-rom" class="action-btn primary">⬇ halftone.gb (64 KiB)</button>
+            <button id="btn-export-sav" class="action-btn">💾 Export .sav</button>
+            <button id="btn-open-tech-sheet" class="action-btn">📋 Verification Sheet</button>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- RIGHT: SM83 CPU / PPU VRAM / OAM / 4-CH APU HARDWARE ENGINEERING STUDIO -->
+    <aside id="inspector-dock" aria-label="SM83 Hardware Engineering Inspector">
+      <!-- PANEL 1: UNCROPPED 160x144 PIXEL-PERFECT MONITOR + GAME TELEMETRY -->
+      <section class="inspector-card">
+        <div class="card-header">
+          <h2>UNCROPPED 160×144 DOT-MATRIX MONITOR</h2>
+          <span id="hud-state-badge" class="state-chip">TITLE</span>
+        </div>
+        <div class="monitor-split">
+          <div class="ref-lcd-frame">
+            <canvas id="ref-lcd-canvas" width="160" height="144"></canvas>
+            <div class="lcd-caption">160×144 NATIVE · 0% CROPPED · 59.7275 HZ</div>
+          </div>
+          <div class="telemetry-stack">
+            <div id="hud-plate-title" class="plate-banner">TITLE · HALFTONE</div>
+            <div id="hud-phase-badge" class="telemetry-badge phase-ink">PHASE: INK (0xE4)</div>
+            <div class="kv-grid">
+              <div class="kv-cell"><span class="k">POS (X,Y)</span><span id="hud-pos" class="v">32, 80</span></div>
+              <div class="kv-cell"><span class="k">HEARTS</span><span id="hud-hearts" class="v hearts">♥♥♥</span></div>
+              <div class="kv-cell"><span class="k">SORTS</span><span id="hud-sorts" class="v">0/7</span></div>
+              <div class="kv-cell"><span class="k">FALLS</span><span id="hud-falls" class="v">000</span></div>
+              <div class="kv-cell"><span class="k">BOSS HP</span><span id="hud-boss-hp" class="v">—</span></div>
+              <div class="kv-cell"><span class="k">G_FRAME</span><span id="hud-gframe" class="v">0</span></div>
+            </div>
+            <div class="joypad-strip" aria-label="Live Joypad Matrix">
+              <span class="jp-bit" id="jp-l">◀</span>
+              <span class="jp-bit" id="jp-u">▲</span>
+              <span class="jp-bit" id="jp-d">▼</span>
+              <span class="jp-bit" id="jp-r">▶</span>
+              <span class="jp-bit btn-b" id="jp-b">B·FLIP</span>
+              <span class="jp-bit btn-a" id="jp-a">A·JUMP</span>
+              <span class="jp-bit" id="jp-sel">SEL</span>
+              <span class="jp-bit" id="jp-sta">STA</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 2: SHARP LR35902 (SM83) CPU & PPU REGISTERS + CYCLE BUDGET -->
+      <section class="inspector-card">
+        <div class="card-header">
+          <h2>SHARP LR35902 (SM83) CPU &amp; PPU REGISTERS</h2>
+          <span class="sub-chip">4.194304 MHz</span>
+        </div>
+        <div class="reg-grid">
+          <div class="reg-box"><span class="rk">PC</span><span id="reg-pc" class="rv">0x0100</span></div>
+          <div class="reg-box"><span class="rk">SP</span><span id="reg-sp" class="rv">0xFFFE</span></div>
+          <div class="reg-box"><span class="rk">AF</span><span id="reg-af" class="rv">0x01B0</span></div>
+          <div class="reg-box"><span class="rk">BC</span><span id="reg-bc" class="rv">0x0013</span></div>
+          <div class="reg-box"><span class="rk">DE</span><span id="reg-de" class="rv">0x00D8</span></div>
+          <div class="reg-box"><span class="rk">HL</span><span id="reg-hl" class="rv">0x014D</span></div>
+          <div class="reg-box"><span class="rk">FLAGS</span><span id="reg-flags" class="rv">Z-HC</span></div>
+          <div class="reg-box"><span class="rk">LCDC</span><span id="reg-lcdc" class="rv">0xC7</span></div>
+          <div class="reg-box"><span class="rk">STAT</span><span id="reg-stat" class="rv">0x85</span></div>
+          <div class="reg-box"><span class="rk">BGP</span><span id="reg-bgp" class="rv">0xE4</span></div>
+          <div class="reg-box"><span class="rk">OBP</span><span id="reg-obp" class="rv">E0/54</span></div>
+          <div class="reg-box"><span class="rk">LY</span><span id="reg-ly" class="rv">144/44</span></div>
+        </div>
+        <div class="budget-block">
+          <div class="budget-row">
+            <span class="bk">FRAME CYCLE BUDGET</span>
+            <span id="budget-cycles" class="bv">21,420 / 70,224 T (30.5%)</span>
+          </div>
+          <div class="budget-bar"><div id="budget-bar-fill" class="budget-fill" style="width: 30.5%"></div></div>
+          <div class="budget-row sub">
+            <span>OAM SCANLINE LIMIT</span>
+            <span id="budget-oam" class="bv">12/40 sprites · max 4/10 per line · 0 lag</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL 3: LIVE VRAM 384-TILE ATLAS & 4-CHANNEL APU OSCILLOSCOPE -->
+      <section class="inspector-card grow-card">
+        <div class="card-header">
+          <h2>LIVE VRAM 384-TILE ATLAS &amp; 4-CH APU</h2>
+          <span class="sub-chip">0x8000 + 0xFF10</span>
+        </div>
+        <div class="vram-apu-split">
+          <div class="vram-pane">
+            <canvas id="vram-canvas" width="128" height="192"></canvas>
+            <div class="pane-foot">VRAM 0x8000–0x97FF (384 TILES)</div>
+          </div>
+          <div class="apu-pane">
+            <canvas id="apu-canvas" width="236" height="192" title="Click any channel lane to Mute/Unmute"></canvas>
+            <div class="pane-foot">4-CH APU OSCILLOSCOPE (CLICK LANE TO MUTE)</div>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <!-- TECHNICAL VERIFICATION SHEET MODAL -->
+  <div id="tech-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="tech-modal-title">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="tech-modal-title">CARTRIDGE — HALFTONE 64 KiB ROM HARDWARE &amp; MULTI-EMULATOR VERIFICATION</h3>
+        <button id="btn-close-tech-sheet" class="modal-close">✕ Close</button>
+      </div>
+      <div id="tech-modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="./vendor/binjgb.js"></script>
+  <script type="module" src="./emu_studio.js"></script>
+</body>
+</html>

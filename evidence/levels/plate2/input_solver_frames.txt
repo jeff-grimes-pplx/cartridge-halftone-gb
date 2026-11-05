@@ -1,0 +1,68 @@
+# HALFTONE scripted playthrough: prefix (177 frames) + solver macros for plate 2 (solved)
+0 0
+60 128
+63 0
+# macro: run8 R jump hold 16 (41 frames)
+177 1
+185 17
+201 1
+# macro: jump R hold 5 (24 frames)
+218 17
+223 1
+# macro: jump R hold 16 (28 frames)
+242 17
+258 1
+# macro: run8 R jump hold 16 (44 frames)
+278 17
+294 1
+# macro: jump R flip@3 (28 frames)
+314 17
+317 49
+318 17
+330 1
+# macro: run8 R jump hold 16 (45 frames)
+350 17
+366 1
+# macro: jump R flip@3 (28 frames)
+387 17
+390 49
+391 17
+403 1
+# macro: run8 R jump hold 16 (45 frames)
+423 17
+439 1
+# macro: run R 4 (6 frames)
+# macro: jump R flip@3 (28 frames)
+466 17
+469 49
+470 17
+482 1
+# macro: run8 R jump hold 16 (44 frames)
+502 17
+518 1
+# macro: jump R hold 16 (33 frames)
+538 17
+554 1
+# macro: run8 R jump hold 2 (34 frames)
+579 17
+581 1
+# macro: jump R flip@3 (28 frames)
+605 17
+608 49
+609 17
+621 1
+# macro: run8 R jump hold 16 (44 frames)
+641 17
+657 1
+# macro: jump R flip@3 (28 frames)
+677 17
+680 49
+681 17
+693 1
+# macro: run8 R jump hold 16 (45 frames)
+713 17
+729 1
+# macro: run R 40 (42 frames)
+# macro: run R 40 (25 frames)
+817 0
+# end frame 817; 19 macros, 640 solution frames; nodes expanded 24, simulations 1315, 33s

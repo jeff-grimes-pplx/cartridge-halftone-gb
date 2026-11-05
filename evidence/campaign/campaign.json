@@ -1,0 +1,267 @@
+{
+ "rom": "source/build/HALFTONE.gb",
+ "rom_sha256": "45748f2c4249d8a78b15c372d873d03c7c7e2f200825fdcbc504a39944e178b9",
+ "input_gframe_clock": "evidence/campaign/campaign_input.txt",
+ "input_solver_frames": null,
+ "input_source": "gframe script supplied (--gframe-script): the per-plate solver macros were converted to the game-frame clock on an earlier ROM build; the game logic and collision classes are unchanged, so the same script is replayed on this build",
+ "reference_run": "sameboy_gframe_ref (second SameBoy gframe replay: determinism check)",
+ "frames_total_sameboy": 8274,
+ "frames_total_mgba": 8257,
+ "ending_reached": {
+  "sameboy": true,
+  "mgba": true
+ },
+ "end_state": {
+  "sameboy": "ENDING",
+  "mgba": "ENDING"
+ },
+ "deaths": {
+  "sameboy": 0,
+  "mgba": 0
+ },
+ "illegal_opcode": {
+  "sameboy": false,
+  "mgba": false
+ },
+ "campaign_seconds_at_59_73hz": 138.5,
+ "play_frames": 5882,
+ "play_seconds": 98.5,
+ "busy_pct_max_sameboy": 100.0,
+ "busy_pct_mean_play_sameboy": 47.4,
+ "frames_over_85pct_play_sameboy": 0,
+ "oam_max_per_line_sameboy": 8,
+ "oam_objects_obscured_total_sameboy": 0,
+ "sp_min": {
+  "sameboy": "0xDFB7",
+  "mgba": "0xDFB7"
+ },
+ "lag_total": 17,
+ "plates": [
+  {
+   "plate": 1,
+   "name": "MARGINS",
+   "frames": 672,
+   "seconds": 11.3,
+   "busy_mean": 37.9,
+   "busy_max": 65.28,
+   "frames_over_85": 0,
+   "oam_max_per_line": 5,
+   "oam_max_line": 82,
+   "obj_max": 5,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 7
+  },
+  {
+   "plate": 2,
+   "name": "GALLEY",
+   "frames": 642,
+   "seconds": 10.7,
+   "busy_mean": 40.9,
+   "busy_max": 68.16,
+   "frames_over_85": 0,
+   "oam_max_per_line": 5,
+   "oam_max_line": 82,
+   "obj_max": 8,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 9
+  },
+  {
+   "plate": 3,
+   "name": "INK WORKS",
+   "frames": 631,
+   "seconds": 10.6,
+   "busy_mean": 43.0,
+   "busy_max": 68.05,
+   "frames_over_85": 0,
+   "oam_max_per_line": 5,
+   "oam_max_line": 66,
+   "obj_max": 7,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 9
+  },
+  {
+   "plate": 4,
+   "name": "BINDERY",
+   "frames": 713,
+   "seconds": 11.9,
+   "busy_mean": 57.3,
+   "busy_max": 84.81,
+   "frames_over_85": 0,
+   "oam_max_per_line": 8,
+   "oam_max_line": 64,
+   "obj_max": 11,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 9
+  },
+  {
+   "plate": 5,
+   "name": "PULSE",
+   "frames": 632,
+   "seconds": 10.6,
+   "busy_mean": 48.8,
+   "busy_max": 72.0,
+   "frames_over_85": 0,
+   "oam_max_per_line": 6,
+   "oam_max_line": 65,
+   "obj_max": 6,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 10
+  },
+  {
+   "plate": 6,
+   "name": "ROTARY",
+   "frames": 733,
+   "seconds": 12.3,
+   "busy_mean": 55.1,
+   "busy_max": 81.72,
+   "frames_over_85": 0,
+   "oam_max_per_line": 8,
+   "oam_max_line": 55,
+   "obj_max": 11,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 9
+  },
+  {
+   "plate": 7,
+   "name": "NEGATIVE",
+   "frames": 659,
+   "seconds": 11.0,
+   "busy_mean": 54.7,
+   "busy_max": 83.45,
+   "frames_over_85": 0,
+   "oam_max_per_line": 6,
+   "oam_max_line": 64,
+   "obj_max": 9,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 11
+  },
+  {
+   "plate": 8,
+   "name": "THE SMUDGE",
+   "frames": 1200,
+   "seconds": 20.1,
+   "busy_mean": 42.9,
+   "busy_max": 74.93,
+   "frames_over_85": 0,
+   "oam_max_per_line": 8,
+   "oam_max_line": 96,
+   "obj_max": 12,
+   "lag_frames_in_play": 1,
+   "hearts_at_end": 3,
+   "sorts_mask_at_end": 0
+  }
+ ],
+ "keyframes": {
+  "title": 30,
+  "plate1_play": 265,
+  "plate2_play": 1200,
+  "plate3_play": 2105,
+  "plate4_play": 2999,
+  "plate5_play": 3975,
+  "plate6_play": 4870,
+  "plate7_play": 5866,
+  "plate8_play": 6780,
+  "boss_hit_1": 6887,
+  "boss_hit_2": 7137,
+  "boss_hit_3": 7380,
+  "boss_hit_4": 7606,
+  "boss_hit_5": 7801,
+  "boss_dead": 7920,
+  "ending": 8123
+ },
+ "compare": {
+  "aligned_frames": 8060,
+  "identical_video_frames": 7296,
+  "identical_probe_frames": 8060,
+  "first_probe_divergence_gframe": null,
+  "video_mismatch_frames": 764,
+  "video_mismatch_all_obj_xprio_overlaps": true,
+  "video_mismatch_unexplained_gframes": [],
+  "agree": true
+ },
+ "gframe_replay_reproduces_reference_run": true,
+ "save_resume": {
+  "after_plate2_sav": {
+   "magic": "HFT1",
+   "plate_next_0based": 2,
+   "sorts_masks": [
+    127,
+    255,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "deaths": 0,
+   "frames": 1314,
+   "seconds": 22.0,
+   "complete": 0,
+   "checksum": 57,
+   "checksum_ok": true
+  },
+  "sameboy_resume_plate3": {
+   "end_state": "PLAY",
+   "level_0based": 2,
+   "frame": 181,
+   "ok": true
+  },
+  "mgba_resume_plate3": {
+   "end_state": "PLAY",
+   "level_0based": 2,
+   "frame": 179,
+   "ok": true
+  },
+  "end_of_campaign_sav": {
+   "magic": "HFT1",
+   "plate_next_0based": 7,
+   "sorts_masks": [
+    127,
+    255,
+    255,
+    191,
+    255,
+    255,
+    255,
+    0
+   ],
+   "deaths": 0,
+   "frames": 5882,
+   "seconds": 98.5,
+   "complete": 1,
+   "checksum": 227,
+   "checksum_ok": true
+  },
+  "end_of_campaign_sav_mgba_identical": true,
+  "sameboy_resume_after_ending": {
+   "end_state": "PLAY",
+   "level_0based": 7,
+   "frame": 173,
+   "ok": true
+  },
+  "mgba_resume_after_ending": {
+   "end_state": "PLAY",
+   "level_0based": 7,
+   "frame": 171,
+   "ok": true
+  },
+  "sameboy_corrupt_save_starts_plate1": {
+   "end_state": "PLAY",
+   "level_0based": 0,
+   "ok": true
+  }
+ },
+ "emulators": {
+  "sameboy": "SameBoy 1.0.4 (headless core, model dmg, boot=/tmp/a5-tools/SameBoy/build/bin/tester/dmg_boot.bin)",
+  "mgba": "mGBA 0.10.5 (libmgba headless, GB model DMG, no boot ROM / skipBios)"
+ },
+ "pass": true
+}

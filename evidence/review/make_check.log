@@ -1,0 +1,12 @@
+/tmp/a5-tools/rgbds/rgbfix -v build/HALFTONE.gb -o build/HALFTONE.fixed.gb
+cmp build/HALFTONE.gb build/HALFTONE.fixed.gb && echo "header checksums valid (rgbfix -v changed nothing)"
+header checksums valid (rgbfix -v changed nothing)
+/tmp/a5-tools/gbdk/bin/romusage build/HALFTONE.map -g || /tmp/a5-tools/gbdk/bin/romusage build/HALFTONE.noi -g
+
+Bank         Range                Size     Used  Used%     Free  Free% 
+--------     ----------------  -------  -------  -----  -------  -----
+ROM_0        0x0000 -> 0x3FFF    16384     9531    58%     6853    42% |-###############-...........|
+ROM_1        0x4000 -> 0x7FFF    16384    11352    69%     5032    31% |###################-........|
+ROM_2        0x4000 -> 0x7FFF    16384     9562    58%     6822    42% |################-...........|
+ROM_3        0x4000 -> 0x7FFF    16384    11449    70%     4935    30% |###################-........|
+WRAM_LO      0xC000 -> 0xCFFF     4096     3085    75%     1011    25% |.-####################......|

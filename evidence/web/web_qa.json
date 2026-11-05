@@ -1,0 +1,144 @@
+{
+ "base": "http://127.0.0.1:8765",
+ "date": "2026-10-15T07:21:06.042Z",
+ "status": "ready · halftone · 64 KiB",
+ "sheet_blocks": [
+  "Header",
+  "RAM",
+  "Bank layout",
+  "Tile and sprite budget",
+  "Audio",
+  "Per-frame CPU budget",
+  "Toolchain",
+  "Emulators"
+ ],
+ "proof_items": [
+  "Header and checksums",
+  "Two independent emulators",
+  "Scripted full-campaign playthrough",
+  "Per-plate scripts",
+  "Save and resume",
+  "This page",
+  "Budgets"
+ ],
+ "rom_sha256_shown": "45748f2c4249d8a78b15c372d873d03c7c7e2f200825fdcbc504a39944e178b9",
+ "rom_download": {
+  "status": 200,
+  "bytes": 65536
+ },
+ "keyboard": {
+  "start_pressed_enters_play": true,
+  "before": {
+   "px": 32,
+   "py": 80,
+   "phase": 0,
+   "state": 3,
+   "level": 0
+  },
+  "after_flip": {
+   "px": 32,
+   "py": 80,
+   "phase": 1,
+   "state": 3,
+   "level": 0
+  },
+  "during_run_and_jump": {
+   "px": 65,
+   "py": 52,
+   "phase": 1,
+   "state": 3,
+   "level": 0
+  },
+  "flipped": true,
+  "moved_right": true,
+  "jumped": true
+ },
+ "binjgb_campaign": {
+  "vblanks": 7856,
+  "ms": 2553,
+  "play_frames": 5882,
+  "play_start_vblank": {
+   "0": 156,
+   "1": 1068,
+   "2": 1950,
+   "3": 2821,
+   "4": 3774,
+   "5": 4646,
+   "6": 5619,
+   "7": 6518
+  },
+  "boss_hits": [
+   6713,
+   6963,
+   7206,
+   7432,
+   7627
+  ],
+  "ending_reached": true,
+  "end_state": 6,
+  "deaths": 0,
+  "hearts": 3,
+  "boss_hp": 0,
+  "sram_updates": 8,
+  "script_events": 505,
+  "events_consumed": 505,
+  "save": {
+   "magic": "HFT1",
+   "plate_next_0based": 7,
+   "sorts": [
+    127,
+    255,
+    255,
+    191,
+    255,
+    255,
+    255,
+    0
+   ],
+   "deaths": 0,
+   "complete": 1,
+   "checksum_ok": true
+  }
+ },
+ "save_path": {
+  "after_plate2": {
+   "vblanks": 1857,
+   "level_0based": 2,
+   "magic": "HFT1",
+   "plate_next_0based": 2,
+   "checksum_ok": true,
+   "status": "running · save written"
+  },
+  "status_after_reload": "ready · halftone · 64 KiB · save present",
+  "after_start": {
+   "g_state": 3,
+   "g_level_0based": 2,
+   "hearts": 3
+  },
+  "after_erase": {
+   "status": "save erased",
+   "g_state": 1,
+   "g_level_0based": 0
+  },
+  "status_after_erase_reload": "ready · halftone · 64 KiB",
+  "import_status": "running · save imported",
+  "after_import_start": {
+   "g_state": 3,
+   "g_level_0based": 2
+  }
+ },
+ "no_storage": {
+  "status": "ready · halftone · 64 KiB",
+  "after_plate2": {
+   "level_0based": 2,
+   "status": "running · save written (browser storage unavailable; use Export)"
+  },
+  "after_reset_start": {
+   "g_state": 3,
+   "g_level_0based": 2
+  },
+  "errors": []
+ },
+ "errors": [],
+ "pass": true
+}

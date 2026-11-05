@@ -1,0 +1,29 @@
+python3 tools/art.py gen
+world tiles: 76  font/hud tiles: 52  sprite tiles: 88  boss tiles: 48  logo tiles: 48  metatiles: 24
+python3 tools/levels.py gen
+8 levels, 3664 map bytes
+python3 tools/music.py gen
+7 songs, 56 patterns
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/main.o src/main.c
+src/main.c:223: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-speed -Wf--max-allocs-per-node3000 -c -o build/engine.o src/engine.c
+src/engine.c:400: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+src/engine.c:400: warning 126: unreachable code
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/audio.o src/audio.c
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/level.o src/level.c
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/gfx.o gen/gfx.c
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/levels.o gen/levels.c
+mkdir -p build
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wf--opt-code-size -c -o build/music.o gen/music.c
+mkdir -p build
+cd /tmp/a5-tools/hUGEDriver && /tmp/a5-tools/rgbds-0.6.1/rgbasm -I. -DGBDK -o /tmp/review/source/build/hUGEDriver.obj hUGEDriver.asm
+python3 /tmp/a5-tools/hUGEDriver/tools/rgb2sdas.py -b 0 -o build/hUGEDriver.o build/hUGEDriver.obj
+RGB2SDAS: object hUGEDriver.obj was successfully converted to hUGEDriver.o
+/tmp/a5-tools/gbdk/bin/lcc -Wa-l -Wl-m -Wl-j -debug -Igen -Isrc -I/tmp/a5-tools/hUGEDriver/include -Wm-yt0x1B -Wm-ya1 -Wl-yo4 -Wm-yn"HALFTONE" -o build/HALFTONE.gb build/main.o build/engine.o build/audio.o build/level.o build/gfx.o build/levels.o build/music.o build/hUGEDriver.o
+-rw-r--r-- 1 user user 65536 Oct 15 04:31 build/HALFTONE.gb

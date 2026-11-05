@@ -1,0 +1,4 @@
+# fresh boot with the saved SRAM: START on the title (CONTINUE is preselected when a save exists)
+0 0
+60 128
+63 0

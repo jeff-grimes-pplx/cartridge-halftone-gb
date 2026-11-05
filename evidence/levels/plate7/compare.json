@@ -1,0 +1,16 @@
+{
+ "sameboy_vs_mgba_by_gframe": {
+  "aligned_frames": 976,
+  "identical_video_frames": 891,
+  "identical_probe_frames": 976,
+  "first_probe_divergence_gframe": null,
+  "video_mismatch_frames": 85,
+  "video_mismatch_all_obj_xprio_overlaps": true,
+  "video_mismatch_unexplained_gframes": [],
+  "agree": true
+ },
+ "sameboy_gframe_vs_solver_clock": {
+  "agree": null,
+  "note": "script supplied in the gframe clock; no solver-clock reference run"
+ }
+}

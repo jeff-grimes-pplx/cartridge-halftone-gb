@@ -1,0 +1,53 @@
+# clock: gframe (times are the game frame counter g_frame; replay with --input-clock gframe)
+# HALFTONE scripted playthrough: prefix (177 frames) + solver macros for plate 1 (solved)
+1 0
+61 128
+62 0
+# macro: run8 R jump hold 16 (41 frames)
+155 1
+163 17
+179 1
+# macro: jump R hold 16 (33 frames)
+196 17
+212 1
+# macro: run R 40 (42 frames)
+# macro: run8 R jump hold 9 (42 frames)
+279 17
+288 1
+# macro: jump R hold 16 (28 frames)
+313 17
+329 1
+# macro: jump R hold 5 (18 frames)
+341 17
+346 1
+# macro: jump R hold 16 (28 frames)
+359 17
+375 1
+# macro: run8 R jump hold 16 (49 frames)
+395 17
+411 1
+# macro: run R 40 (42 frames)
+# macro: run R 40 (42 frames)
+# macro: run8 R jump hold 16 (45 frames)
+528 17
+544 1
+# macro: jump R hold 16 (28 frames)
+565 17
+581 1
+# macro: run R 40 (42 frames)
+# macro: jump R hold 16 (37 frames)
+635 17
+651 1
+# macro: jump R hold 16 (28 frames)
+672 17
+688 1
+# macro: run R 20 (21 frames)
+# macro: jump R flip@3 (33 frames)
+721 17
+724 49
+725 17
+737 1
+# macro: run R 40 (42 frames)
+# macro: run R 40 (29 frames)
+825 0
+# end frame 847; 19 macros, 670 solution frames; nodes expanded 19, simulations 1030, 26s

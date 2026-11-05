@@ -1,0 +1,72 @@
+{
+ "after_plate2_sav": {
+  "magic": "HFT1",
+  "plate_next_0based": 2,
+  "sorts_masks": [
+   127,
+   255,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "deaths": 0,
+  "frames": 1314,
+  "seconds": 22.0,
+  "complete": 0,
+  "checksum": 57,
+  "checksum_ok": true
+ },
+ "sameboy_resume_plate3": {
+  "end_state": "PLAY",
+  "level_0based": 2,
+  "frame": 181,
+  "ok": true
+ },
+ "mgba_resume_plate3": {
+  "end_state": "PLAY",
+  "level_0based": 2,
+  "frame": 179,
+  "ok": true
+ },
+ "end_of_campaign_sav": {
+  "magic": "HFT1",
+  "plate_next_0based": 7,
+  "sorts_masks": [
+   127,
+   255,
+   255,
+   191,
+   255,
+   255,
+   255,
+   0
+  ],
+  "deaths": 0,
+  "frames": 5882,
+  "seconds": 98.5,
+  "complete": 1,
+  "checksum": 227,
+  "checksum_ok": true
+ },
+ "end_of_campaign_sav_mgba_identical": true,
+ "sameboy_resume_after_ending": {
+  "end_state": "PLAY",
+  "level_0based": 7,
+  "frame": 173,
+  "ok": true
+ },
+ "mgba_resume_after_ending": {
+  "end_state": "PLAY",
+  "level_0based": 7,
+  "frame": 171,
+  "ok": true
+ },
+ "sameboy_corrupt_save_starts_plate1": {
+  "end_state": "PLAY",
+  "level_0based": 0,
+  "ok": true
+ }
+}
